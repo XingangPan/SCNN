@@ -7,7 +7,7 @@ Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. "Spatial As Dee
 This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
 
 ### Introduction
-![SCNN](SCNN.png)
+<img align="middle" width="700" height="500" src="CNNvsSCNN.png">
 - Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN. 
 - It is extremly effective in cases where objects have strong shape priors like the long thin continuous property of lane lines.  
 vgg16+SCNN outperforms resnet101 on lane detection.
@@ -17,7 +17,7 @@ vgg16+SCNN outperforms resnet101 on lane detection.
 - matlab (for tools/prob2lines)
 - opencv (for tools/lane_evaluation)
 - Hardware: 
-For testing, GPU with 3G memory suffices.  
+For testing, GPU with 3G memory suffices.
 For training, we recommend 4xGPU with 12G memory.
 
 ### Before Start
@@ -25,7 +25,7 @@ For training, we recommend 4xGPU with 12G memory.
     ```Shell
     git clone https://github.com/XingangPan/SCNN.git
     ```
-    We'll call the directory that you cloned SCNN into '$SCNN_ROOT'
+    We'll call the directory that you cloned SCNN as '$SCNN_ROOT'
 
 2. Download CULane dataset
     ```Shell
@@ -47,7 +47,7 @@ For training, we recommend 4xGPU with 12G memory.
    Download [our best performed model](https://drive.google.com/open?id=1Wv3r3dCYNBwJdKl_WPEfrEOt-XGaROKu) here.
 
 2. Run test script
-```Shell
+    ```Shell
     cd $SCNN_ROOT
     sh ./experiments/test.sh
     ```
@@ -89,12 +89,12 @@ For training, we recommend 4xGPU with 12G memory.
     Then you can test the trained model following the Testing steps above. If your model position or name is changed, remenber to set them to yours accordingly.
 
 ### Citing SCNN or CULane
-```
-@inproceedings{pan2018SCNN,
- author = {Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, and Xiaoou Tang},  
- title = {Spatial As Deep: Spatial CNN for Traffic Scene Understanding},  
- booktitle = {AAAI Conference on Artificial Intelligence (AAAI)},  
- month = {February},  
- year = {2018}  
+```  
+@inproceedings{pan2018SCNN,  
+  author = {Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, and Xiaoou Tang},  
+  title = {Spatial As Deep: Spatial CNN for Traffic Scene Understanding},  
+  booktitle = {AAAI Conference on Artificial Intelligence (AAAI)},  
+  month = {February},  
+  year = {2018}  
 }
-```
+```  
