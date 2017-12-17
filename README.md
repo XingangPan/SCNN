@@ -7,7 +7,7 @@ Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. "Spatial As Dee
 This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
 
 ### Introduction
-<img align="middle" width="700" height="500" src="CNNvsSCNN.jpg">
+<img align="middle" width="700" height="340" src="CNNvsSCNN.jpg">
 - Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN. 
 - It is extremly effective in cases where objects have strong shape priors like the long thin continuous property of lane lines.  
 vgg16+SCNN outperforms resnet101 on lane detection.
@@ -86,7 +86,7 @@ For training, we recommend 4xGPU with 12G memory.
     sh ./experiments/train.sh
     ```
     The training process should start and trained models would be saved in `$SCNN_ROOT/experiments/models/vgg_SCNN_DULR_w9` by default.  
-    Then you can test the trained model following the Testing steps above. If your model position or name is changed, remenber to set them to yours accordingly.
+    Then you can test the trained model following the Testing steps above. If your model position or name is changed, remember to set them to yours accordingly.
 
 ### Citing SCNN or CULane
 ```  
