@@ -2,12 +2,13 @@
 
 ### Paper
 
-Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. "Spatial As Deep: Spatial CNN for Traffic Scene Understanding", AAAI2018
+Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. ["Spatial As Deep: Spatial CNN for Traffic Scene Understanding"](https://xingangpan.github.io/files/SCNN.pdf), AAAI2018
 
 This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
 
 ### Introduction
 <img align="middle" width="700" height="280" src="CNNvsSCNN.jpg">   
+
 - Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN.  
 - It is extremly effective in cases where objects have strong shape priors like the long thin continuous property of lane lines.  
 vgg16+SCNN outperforms resnet101 on lane detection.
