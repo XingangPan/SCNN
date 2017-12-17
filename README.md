@@ -7,8 +7,8 @@ Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. "Spatial As Dee
 This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
 
 ### Introduction
-<img align="middle" width="700" height="340" src="CNNvsSCNN.jpg">
-- Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN. 
+<img align="middle" width="700" height="280" src="CNNvsSCNN.jpg">   
+- Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN.  
 - It is extremly effective in cases where objects have strong shape priors like the long thin continuous property of lane lines.  
 vgg16+SCNN outperforms resnet101 on lane detection.
 
