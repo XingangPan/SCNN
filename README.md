@@ -30,7 +30,7 @@ For training, we recommend 4xGPU with 12G memory.
 
 2. Download CULane dataset
     ```Shell
-    mkdir data/CULane
+    mkdir -p data/CULane
     cd data/CULane
     ```
    Download [CULane](https://xingangpan.github.io/projects/CULane.html) dataset and extract here.  
@@ -99,5 +99,5 @@ For training, we recommend 4xGPU with 12G memory.
   year = {2018}  
 }
 ```  
-## Acknowledgment
+### Acknowledgment
 Most work for building CULane dataset is done by [Xiaohang Zhan](https://xiaohangzhan.github.io/), Jun Li, and Xudong Cao. We thank them for their helpful contribution.
