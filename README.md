@@ -11,12 +11,12 @@ This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resn
 
 - Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN.  
 - It is extremly effective in cases where objects have strong shape priors like the long thin continuous property of lane lines.  
-vgg16+SCNN outperforms resnet101 on lane detection.
+VGG16+SCNN outperforms ResNet101 on lane detection.
 
 ### Requirements
 - [Torch](http://torch.ch/docs/getting-started.html), please follow the installation instructions at [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
-- matlab (for tools/prob2lines)
-- opencv (for tools/lane_evaluation)
+- Matlab (for tools/prob2lines), version R2014a or later.
+- Opencv (for tools/lane_evaluation), version 2.4.8 (later 2.4.x should also work).
 - Hardware: 
 For testing, GPU with 3G memory suffices.
 For training, we recommend 4xGPU with 12G memory.
@@ -71,11 +71,11 @@ For training, we recommend 4xGPU with 12G memory.
     By now, you should be able to reproduce our result in the paper.
     
 ### Training
-1. Download vgg16 pretrained on ImageNet
+1. Download VGG16 pretrained on ImageNet
     ```Shell
     cd $SCNN_ROOT/experiments/models
     ```
-   Download vgg16 model [here](https://drive.google.com/open?id=12RLXY6o8gaGMY1K1g6d447Iby9ewVIyV) and move it to `$SCNN_ROOT/experiments/models/vgg`.
+   Download VGG16 model [here](https://drive.google.com/open?id=12RLXY6o8gaGMY1K1g6d447Iby9ewVIyV) and move it to `$SCNN_ROOT/experiments/models/vgg`.
 2. Generate SCNN model
     ```Shell
     th SCNN-gen.lua
