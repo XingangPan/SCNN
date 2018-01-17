@@ -67,21 +67,16 @@ function Trainer:train(epoch, dataloader)
       self:copyInputs(sample)
       self.input = self.input:cuda()
       local output = self.model:forward(self.input)
-      local batchSize = 0
-      if self.opt.labelType == 'seg' or self.opt.labelType == 'exist' then
-         batchSize = output:size(1)
-      else
-         batchSize = output[1]:size(1)
-      end
+      local batchSize = output[1]:size(1)
       local loss, Loss = self.criterion:forward(self.model.output, self.target)
       self.model:zeroGradParameters()
       self.criterion:backward(self.model.output, self.target)
       self.model:backward(self.input, self.criterion.gradInput)
       optim.sgd(feval, self.params, self.optimState)
       N = N + batchSize
-      lossSum = lossSum + Loss[1]*batchSize
-      lossSum2 = lossSum2 + Loss[2]*batchSize
-      print((' | Epoch: [%d][%d/%d][%d]  Time %.2f  LR %.5f  Err %.5f (%.5f)  Err %.5f (%.5f)'):format(
+      lossSum = lossSum + Loss[1]*batchSize    -- loss for segmentation branch
+      lossSum2 = lossSum2 + Loss[2]*batchSize    -- loss for classification branch
+      print((' | Epoch: [%d][%d/%d][%d]  Time %.2f  LR %.5f  Err1 %.5f (%.5f)  Err2 %.5f (%.5f)'):format(
             epoch, n, trainSize, self.iter, timer:time().real, self.optimState.learningRate, Loss[1], lossSum / N, Loss[2], lossSum2 / N))
 
       -- check that the storage didn't get changed do to an unfortunate getParameters call
@@ -129,7 +124,7 @@ function Trainer:test(epoch, dataloader)
       N = N + batchSize
       lossSum = lossSum + Loss[1]*batchSize
       lossSum2 = lossSum2 + Loss[2]*batchSize
-      print((' | Test: [%d][%d/%d] Err %.5f (%.5f) Err %.5f (%.5f) Acc %.2f (%.3f) mRec %.2f (%.3f) mIOU %.2f (%.3f)'):format(
+      print((' | Test: [%d][%d/%d] Err1 %.5f (%.5f) Err2 %.5f (%.5f) Acc %.2f (%.3f) mRec %.2f (%.3f) mIOU %.2f (%.3f)'):format(
          epoch, n, size, Loss[1], lossSum / N, Loss[2], lossSum2 / N, accuracy, AccSum / N, avgRecall, RecSum / N, avgIOU, IOUSum / N))
 
       timer:reset()
@@ -168,6 +163,8 @@ function Trainer:learningRate(epoch)
 end
 
 function Trainer:computeAccuracy( output, target )
+   -- This is not the final evaluation code.
+   -- This only gives primal evaluation for segmentation.
    local batchSize = output:size(1)
    local classNum = output:size(2)
    local h = output:size(3)
