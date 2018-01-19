@@ -74,7 +74,15 @@ function DataLoader:run()
    --if self.split == 'val' then
       --batchSize = torch.round(batchSize / 2)
    --end
-   local perm = torch.randperm(size)
+   local perm
+   if self.split == 'val' then
+      perm = torch.Tensor(size)
+      for i = 1, size do
+         perm[i] = i
+      end
+   else
+      perm = torch.randperm(size)
+   end
 
    local idx, sample = 1, nil
    local function enqueue()
