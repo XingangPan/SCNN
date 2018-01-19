@@ -74,6 +74,9 @@ for n, sample in valLoader:run() do
    local scoremap = output[1]  --:double()
    if opt.smooth then
       scoremap = process(scoremap):float()
+   else
+      local softmax = nn.SpatialSoftMax():cuda()
+      scoremap = softmax(scoremap):float()
    end
    if n > 1 then
       T = T + t
