@@ -12,7 +12,7 @@ local DataLoader = require 'dataloader'
 local checkpoints = require 'checkpoints'
 
 opt = opts.parse(arg)
-show = false    -- Set show to true if you want to visualize. In addition, you need to use qtlua instead of th.
+show = false    -- Set show to true if you want to visualize. In addition, you need to use qlua instead of th.
 
 checkpoint, optimState = checkpoints.latest(opt)
 model = models.setup(opt, checkpoint)
