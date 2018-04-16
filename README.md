@@ -33,7 +33,7 @@ For training, we recommend 4xGPU with 12G memory.
     mkdir -p data/CULane
     cd data/CULane
     ```
-   Download [CULane](https://xingangpan.github.io/projects/CULane.html) dataset and extract here. (Note: If you have downloaded the dataset before 16th April 2018, please update the raw annotations for train&val set as described in the dataset website.)   
+   Download [CULane](https://xingangpan.github.io/projects/CULane.html) dataset and extract here. (Note: If you have downloaded the dataset before 16th April 2018, please update the raw annotations of train&val set as described in the dataset website.)   
    You should have structure like this:
     ```Shell
     $SCNN_ROOT/data/CULane/driver_xx_xxframe    # data folders x6
