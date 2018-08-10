@@ -62,9 +62,15 @@ function buildPass(d,width,dim,scale,kw) --d=1:down-up d=2:right-left
          local conc = nn.ConcatTable()
          if d == true then
             conc:add(nn.Identity())
-            conc:add(conv:clone('weight','bias','gradWeight','gradBias'))
+            local seq = nn.Sequential()
+            seq:add(conv:clone('weight','bias','gradWeight','gradBias'))
+            seq:add(nn.ReLU(true))
+            conc:add(seq)
          else
-            conc:add(conv2:clone('weight','bias','gradWeight','gradBias'))
+            local seq = nn.Sequential()
+            seq:add(conv2:clone('weight','bias','gradWeight','gradBias'))
+            seq:add(nn.ReLU(true))
+            conc:add(seq)
             conc:add(nn.Identity())
          end
          return conc
