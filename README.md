@@ -7,6 +7,9 @@ Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. ["Spatial As De
 This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
 
 ### Introduction
+
+Demo video is available [here](https://youtu.be/ey5XPs1012k).  
+
 <img align="middle" width="700" height="280" src="CNNvsSCNN.jpg">   
 
 - Spatial CNN enables explicit and effective spatial information propagation between neurons in the same layer of a CNN.  
