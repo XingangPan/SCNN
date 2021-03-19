@@ -92,8 +92,9 @@ For training, we recommend 4xGPU with 12G memory.
     The training process should start and trained models would be saved in `$SCNN_ROOT/experiments/models/vgg_SCNN_DULR_w9` by default.  
     Then you can test the trained model following the Testing steps above. If your model position or name is changed, remember to set them to yours accordingly.
 
-### Tensorflow Implementation
-This project is based on lua torch. For tensorflow implementation, please refer to https://github.com/cardwing/Codes-for-Lane-Detection.
+### Other Implementations
+**Tensorflow** implementation reproduced by [cardwing](https://github.com/cardwing): https://github.com/cardwing/Codes-for-Lane-Detection.  
+[new!] **Pytorch** implementation reproduced by [voldemortX](https://github.com/voldemortX): https://github.com/voldemortX/pytorch-auto-drive.
 
 ### Citing SCNN or CULane
 ```  
