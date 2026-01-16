@@ -2,7 +2,7 @@
 
 ### Paper
 
-Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. ["Spatial As Deep: Spatial CNN for Traffic Scene Understanding"](https://arxiv.org/abs/1712.06080), AAAI2018
+Xingang Pan, Xiaohang Zhan, Jianping Shi, Ping Luo, Xiaogang Wang, Xiaoou Tang. ["Spatial As Deep: Spatial CNN for Traffic Scene Understanding"](https://arxiv.org/abs/1712.06080), AAAI2018
 
 This code is modified from [fb.resnet.torch](https://github.com/facebook/fb.resnet.torch).
 
@@ -99,7 +99,7 @@ For training, we recommend 4xGPU with 12G memory.
 ### Citing SCNN or CULane
 ```  
 @inproceedings{pan2018SCNN,  
-  author = {Xingang Pan, Jianping Shi, Ping Luo, Xiaogang Wang, and Xiaoou Tang},  
+  author = {Xingang Pan, Xiaohang Zhan, Jianping Shi, Ping Luo, Xiaogang Wang, and Xiaoou Tang},  
   title = {Spatial As Deep: Spatial CNN for Traffic Scene Understanding},  
   booktitle = {AAAI Conference on Artificial Intelligence (AAAI)},  
   month = {February},  
